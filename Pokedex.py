@@ -12,11 +12,12 @@ from io import BytesIO
 
 # Geometry For Window
 window = tk.Tk()
-window.geometry("600x500")
-window.title("Quad Pokedex Tutorial")
+window.geometry("600x600")
+window.title("Quad Pokédex")
+# window['background'] = '#856ff8'
 window.config(padx=10, pady=10)
 
-title_label = tk.Label(window, text="Quad Python Pokedex")
+title_label = tk.Label(window, text="Quad Python Pokédex")
 title_label.config(font=("Arial", 32))
 title_label.pack(padx=10, pady=10)
 
@@ -30,6 +31,19 @@ pokemon_information.pack(padx=10, pady=10)
 pokemon_types = tk.Label(window)
 pokemon_types.config(font=("Arial", 20))
 pokemon_types.pack(padx=10, pady=10)
+
+#pokemon_moves = tk.Label(window)
+#pokemon_moves.pack(padx=10, pady=10)
+#pokemon_moves.config(font=("Arial", 10))
+
+pokemon_basestats = tk.Label(window)
+pokemon_basestats.config(font=("Arial", 10))
+pokemon_basestats.pack(padx=10, pady=10)
+
+pokemon_abilities = tk.Label(window)
+pokemon_abilities.config(font=("Arial", 10))
+pokemon_abilities.pack(padx=10, pady=10)
+
 
 # FUNCTION
 
@@ -47,7 +61,10 @@ def load_pokemon():
 
     pokemon_information.config(text=f"{pokemon.dex} - {pokemon.name}".title())
     pokemon_types.config(text=" - ".join([t for t in pokemon.types]).title())
-   # pokemon_baseStats(text=f"{pokemon.baseStats}")
+    pokemon_basestats.config(text=f"{pokemon.base_stats}")
+    pokemon_abilities.config(text=f"{pokemon.abilities}")
+    # pokemon_moves.config(text=f"{pokemon_moves}")
+# text=" - ".join([pokemon.moves for move in move.name['fire-red']]))
 
 
 # Text Label Config
